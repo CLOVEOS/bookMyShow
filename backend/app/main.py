@@ -7,13 +7,14 @@ from app.routers import auth, movies, bookings
 Base.metadata.create_all(bind=engine)
 
 app =FastAPI(title="Mini BookMyShow API", version="1.0.0")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins = [
+origin= [
     "http://localhost:5173",
     "https://book-my-show-two-brown.vercel.app",
-],  # Adjust in production environments
+    "https://book-my-show-o5uhjalbi-chutki-talkies.vercel.app",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins =origin,  # Adjust in production environments
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
