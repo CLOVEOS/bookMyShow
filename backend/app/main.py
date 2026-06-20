@@ -10,7 +10,7 @@ app =FastAPI(title="Mini BookMyShow API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    origins = [
+    allow_origins = [
     "http://localhost:5173",
     "https://book-my-show-two-brown.vercel.app",
 ],  # Adjust in production environments
